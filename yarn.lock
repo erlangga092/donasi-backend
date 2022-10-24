@@ -446,7 +446,7 @@ lilconfig@^2.0.5, lilconfig@^2.0.6:
   resolved "https://registry.yarnpkg.com/lilconfig/-/lilconfig-2.0.6.tgz#32a384558bd58af3d4c6e077dd1ad1d397bc69d4"
   integrity sha512-9JROoBW7pobfsx+Sq2JsASvCo6Pfo6WWoUW79HuB1BCoBXD4PLWJPqDF6fNj67pqBYTbAHkE57M1kS/+L1neOg==
 
-lodash@^4.17.19:
+lodash@^4.17.11, lodash@^4.17.19:
   version "4.17.21"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
@@ -645,6 +645,13 @@ supports-preserve-symlinks-flag@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
+
+tailwindcss-plugins@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/tailwindcss-plugins/-/tailwindcss-plugins-0.3.0.tgz#20ec0192a0681c4e2efbb6e5654b767bea388e94"
+  integrity sha512-B3zEQWBpD6WqY97gw7nIXYgYp6E/Z48M2dQDx8RHdaSqVNzzAMOkjvbqDjyckqYJu1xGqsMQuiVXxjoodqvKfQ==
+  dependencies:
+    lodash "^4.17.11"
 
 tailwindcss@^3.2.1:
   version "3.2.1"
