@@ -1,4 +1,4 @@
-@extends('layouts.app', ['title' => 'Kategori - Admin'])
+@extends('layouts.app', ['title' => 'Campaign - Admin'])
 
 @section('content')
   <main class="flex-1 overflow-y-auto overflow-x-hidden bg-gray-300">
@@ -6,7 +6,7 @@
       <div class="flex items-center">
 
         <button class="rounded-md bg-gray-700 px-4 py-2 text-white shadow-sm focus:outline-none">
-          <a href="{{ route('admin.category.create') }}">
+          <a href="{{ route('admin.campaign.create') }}">
             <i class="fa fa-plus-square mr-1"></i> TAMBAH
           </a>
         </button>
@@ -19,7 +19,7 @@
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
           </span>
-          <form action="{{ route('admin.category.index') }}" method="GET">
+          <form action="{{ route('admin.campaign.index') }}" method="GET">
             <input type="text" class="form-input w-full rounded-lg pl-10 pr-4" name="q"
               value="{{ request()->query('q') }}" placeholder="Search">
           </form>
@@ -31,11 +31,17 @@
           <table class="min-w-full table-auto">
             <thead class="justify-between">
               <tr class="w-full border bg-gray-100">
-                <th class="border px-5 py-3">
-                  <span class="text-gray-700">IMAGE</span>
+                <th class="border px-5 py-3" style="width: 20%">
+                  <span class="text-gray-700">JUDUL CAMPAIGN</span>
                 </th>
                 <th class="border px-5 py-3">
-                  <span class="text-gray-700">NAMA KATEGORI</span>
+                  <span class="text-gray-700">KATEGORI</span>
+                </th>
+                <th class="border px-5 py-3">
+                  <span class="text-gray-700">TARGET DONASI</span>
+                </th>
+                <th class="border px-5 py-3">
+                  <span class="text-gray-700">TANGGAL BERAKHIR</span>
                 </th>
                 <th class="border px-5 py-3">
                   <span class="text-gray-700">AKSI</span>
@@ -43,21 +49,26 @@
               </tr>
             </thead>
             <tbody class="bg-gray-200">
-              @forelse ($categories as $key => $category)
+              @forelse ($campaigns as $key => $campaign)
                 <tr class="border bg-white">
-                  <td class="flex justify-center px-16 py-3">
-                    <img src="{{ $category->image }}" class="object-fit-cover h-8 rounded-full" alt="">
+                  <td class="border px-5 py-3">
+                    {{ $campaign->title }}
                   </td>
                   <td class="border px-5 py-3">
-                    {{ $category->name }}
+                    {{ $campaign->category->name }}
                   </td>
-                  <td class="border px-10 py-1 text-center">
-                    <a href="{{ route('admin.category.edit', $category->id) }}"
+                  <td class="border px-5 py-3">
+                    {{ formatPrice($campaign->target_donation) }}
+                  </td>
+                  <td class="border px-5 py-3">
+                    {{ $campaign->max_date }}
+                  </td>
+                  <td class="border px-5 py-1 text-center">
+                    <a href="#"
                       class="mr-1 inline-block h-full rounded bg-indigo-600 px-4 py-2 text-sm text-white shadow-sm focus:outline-none">
                       <i class="fa fa-pencil-alt mr-1"></i> EDIT
                     </a>
-                    <button id="{{ $category->id }}" onclick="destroy(this.id);"
-                      class="rounded bg-red-600 px-4 py-2 text-sm text-white shadow-sm focus:outline-none">
+                    <button class="rounded bg-red-600 px-4 py-2 text-sm text-white shadow-sm focus:outline-none">
                       <i class="fa fa-trash"></i> DELETE
                     </button>
                   </td>
@@ -69,10 +80,10 @@
               @endforelse
             </tbody>
           </table>
-          @if ($categories->hasPages())
+          @if ($campaigns->hasPages())
             <div class="flex justify-end bg-white p-3">
               <div class="">
-                {{ $categories->links() }}
+                {{ $campaigns->links() }}
               </div>
             </div>
           @endif

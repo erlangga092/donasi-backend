@@ -26,5 +26,8 @@ Route::prefix('admin')->group(function () {
 
         // categories
         Route::resource("/category", \App\Http\Controllers\Admin\CategoryController::class, ['as' => 'admin']);
+
+        // campaigns
+        Route::resource("/campaign", \App\Http\Controllers\Admin\CampaignController::class, ['as' => 'admin']);
     });
 });
