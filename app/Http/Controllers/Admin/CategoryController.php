@@ -96,10 +96,10 @@ class CategoryController extends Controller
 
     public function destroy(Category $category)
     {
-        Storage::disk('local')->delete('public/categories/' . basename($category->image));
         $category->delete();
 
         if ($category) {
+            Storage::disk('local')->delete('public/categories/' . basename($category->image));
             return response()->json([
                 'status' => 'success'
             ]);

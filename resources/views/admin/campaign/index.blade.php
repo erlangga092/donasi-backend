@@ -64,11 +64,13 @@
                     {{ $campaign->max_date }}
                   </td>
                   <td class="border px-5 py-1 text-center">
-                    <a href="#"
+                    <a href="{{ route('admin.campaign.edit', $campaign->id) }}"
                       class="mr-1 inline-block h-full rounded bg-indigo-600 px-4 py-2 text-sm text-white shadow-sm focus:outline-none">
                       <i class="fa fa-pencil-alt mr-1"></i> EDIT
                     </a>
-                    <button class="rounded bg-red-600 px-4 py-2 text-sm text-white shadow-sm focus:outline-none">
+                    <button id="{{ $campaign->id }}"
+                      class="rounded bg-red-600 px-4 py-2 text-sm text-white shadow-sm focus:outline-none"
+                      onclick="destroy(this.id)">
                       <i class="fa fa-trash"></i> DELETE
                     </button>
                   </td>
@@ -108,7 +110,7 @@
       }).then(result => {
         if (result.isConfirmed) {
           jQuery.ajax({
-            url: `/admin/category/${id}`,
+            url: `/admin/campaign/${id}`,
             data: {
               "id": ID,
               "_token": token

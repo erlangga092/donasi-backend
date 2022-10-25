@@ -115,6 +115,7 @@
                   location.reload()
                 })
               } else {
+                console.log(response.status)
                 Swal.fire({
                   title: 'GAGAL',
                   text: 'DATA GAGAL DIHAPUS!',
@@ -125,6 +126,18 @@
                   location.reload()
                 })
               }
+            },
+            error: function(err) {
+              console.log(err.responseJSON.message)
+              Swal.fire({
+                title: 'GAGAL',
+                text: err.responseJSON.message,
+                icon: 'error',
+                showConfirmButton: false,
+                timer: 3000
+              }).then(function() {
+                location.reload()
+              })
             }
           })
         }
