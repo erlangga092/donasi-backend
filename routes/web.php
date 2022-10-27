@@ -29,5 +29,20 @@ Route::prefix('admin')->group(function () {
 
         // campaigns
         Route::resource("/campaign", \App\Http\Controllers\Admin\CampaignController::class, ['as' => 'admin']);
+
+        // donaturs
+        Route::get("/donaturs", \App\Http\Controllers\Admin\DonaturController::class)
+            ->name('admin.donatur.index');
+
+        // donations
+        Route::get("/donations", \App\Http\Controllers\Admin\DonationController::class)
+            ->name('admin.donation.index');
+
+        // profile
+        Route::get("/profile", \App\Http\Controllers\Admin\ProfileController::class)
+            ->name('admin.profile.index');
+
+        // sliders
+        Route::resource("/slider", \App\Http\Controllers\Admin\SliderController::class, ['as' => 'admin']);
     });
 });

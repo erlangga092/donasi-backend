@@ -79,7 +79,7 @@
         </a>
 
         <a class="{{ Request::is('admin/donatur*') ? ' bg-gray-700 bg-opacity-25 text-gray-100' : 'text-gray-500' }} mt-4 flex items-center py-2 px-6 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
-          href="#">
+          href="{{ route('admin.donatur.index') }}">
           <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -91,7 +91,7 @@
         </a>
 
         <a class="{{ Request::is('admin/donation*') ? ' bg-gray-700 bg-opacity-25 text-gray-100' : 'text-gray-500' }} mt-4 flex items-center py-2 px-6 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
-          href="#">
+          href="{{ route('admin.donation.index') }}">
           <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6">
@@ -102,7 +102,7 @@
         </a>
 
         <a class="{{ Request::is('admin/profile*') ? ' bg-gray-700 bg-opacity-25 text-gray-100' : 'text-gray-500' }} mt-4 flex items-center py-2 px-6 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
-          href="#">
+          href="{{ route('admin.profile.index') }}">
           <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -114,7 +114,7 @@
         </a>
 
         <a class="{{ Request::is('admin/slider*') ? ' bg-gray-700 bg-opacity-25 text-gray-100' : 'text-gray-500' }} mt-4 flex items-center py-2 px-6 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
-          href="#">
+          href="{{ route('admin.slider.index') }}">
           <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

@@ -21,7 +21,10 @@ class CategoryController extends Controller
 
     public function show($slug)
     {
-        $category = Category::with('campaigns.user', 'campaigns.sumDonation')->where('slug', $slug)->first();
+        $category = Category::with('campaigns.user', 'campaigns.sumDonation')
+            ->where('slug', $slug)
+            ->first();
+
         if ($category) {
             return response()->json([
                 'success' => true,

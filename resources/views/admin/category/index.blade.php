@@ -58,7 +58,7 @@
                     </a>
                     <button id="{{ $category->id }}" onclick="destroy(this.id);"
                       class="rounded bg-red-600 px-4 py-2 text-sm text-white shadow-sm focus:outline-none">
-                      <i class="fa fa-trash"></i> DELETE
+                      <i class="fa fa-trash mr-1"></i> DELETE
                     </button>
                   </td>
                 </tr>
@@ -70,10 +70,13 @@
             </tbody>
           </table>
           @if ($categories->hasPages())
-            <div class="flex justify-end bg-white p-3">
+            {{-- <div class="flex justify-end bg-white p-3">
               <div class="">
                 {{ $categories->links() }}
               </div>
+            </div> --}}
+            <div class="bg-white p-3">
+              {{ $categories->links('vendor.pagination.tailwind') }}
             </div>
           @endif
         </div>
@@ -86,14 +89,14 @@
       const token = $("meta[name='csrf-token']").attr('content')
 
       Swal.fire({
-        title: 'APAKAH KAMU YAKIN ?',
-        text: 'INGIN MENGHAPUS DATA INI!',
+        title: 'Apakah Kamu Yakin ?',
+        text: 'Ingin Menghapus Data Ini!',
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        cancelButtonText: 'BATAL',
-        confirmButtonText: 'YA, HAPUS!'
+        cancelButtonText: 'Batal',
+        confirmButtonText: 'Ya, Hapus!'
       }).then(result => {
         if (result.isConfirmed) {
           jQuery.ajax({
@@ -106,8 +109,8 @@
             success: function(response) {
               if (response.status == "success") {
                 Swal.fire({
-                  title: 'BERHASIL',
-                  text: 'DATA BERHASIL DIHAPUS!',
+                  title: 'Berhasil',
+                  text: 'Data Berhasil Dihapus!',
                   icon: 'success',
                   showConfirmButton: false,
                   timer: 1000
