@@ -69,10 +69,10 @@ return [
             'model' => App\Models\User::class,
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'donaturs' => [
+            'driver' => 'eloquent',
+            'model' => \App\Models\Donatur::class,
+        ],
     ],
 
     /*
